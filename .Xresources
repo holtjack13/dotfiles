@@ -57,8 +57,8 @@ URxvt.font:	-xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
 URxvt.scrollBar:	false
 
 ! Rofi Configuration
-rofi.color-active:	#001830, #a87878, #001830, #c06060, #001830
-rofi.color-normal:	#001830, #a87878, #001830, #a87878, #001830
-rofi.color-urgent:	#001830, #a87878, #001830, #ffffff, #001830
-rofi.color-window:	#001830, #a87878
+rofi.color-active:	COLOR0, COLOR5, COLOR0, COLOR12, COLOR0
+rofi.color-normal:	COLOR0, COLOR5, COLOR0, COLOR5, COLOR0
+rofi.color-urgent:	COLOR0, COLOR5, COLOR0, COLOR7, COLOR0
+rofi.color-window:	COLOR0, COLOR5
 
