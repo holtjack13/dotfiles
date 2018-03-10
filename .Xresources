@@ -1,0 +1,64 @@
+! Colour variables
+
+#define COLOR0 #001830
+#define COLOR8 #181830
+
+#define COLOR1 #003048
+#define COLOR9 #004860
+
+#define COLOR2 #006078
+#define COLOR10 #007890
+
+#define COLOR3 #CB254B
+#define COLOR11 #906078
+
+#define COLOR4 #00a8d8
+#define COLOR12 #c06060
+
+#define COLOR5 #a87878
+#define COLOR13 #c07890
+
+#define COLOR6 #48c0c0
+#define COLOR14 #a8d8d8
+
+#define COLOR7 #ffffff
+#define COLOR15 #ffffff
+
+*background:    COLOR0
+*foreground:	COLOR5
+
+*color0:	COLOR0
+*color8:	COLOR8
+
+*color1:	COLOR1
+*color9:	COLOR9
+
+*color2:	COLOR2
+*color10:	COLOR10
+
+*color3:	COLOR3
+*color11:	COLOR11
+
+*color4:	COLOR4
+*color12:	COLOR12
+
+*color5:	COLOR5
+*color13:	COLOR13
+
+*color6:	COLOR6
+*color14:	COLOR14
+
+*color7:	COLOR7
+*color15:	COLOR15
+
+
+! URxvt Configuration
+URxvt.font:	-xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
+URxvt.scrollBar:	false
+
+! Rofi Configuration
+rofi.color-active:	#001830, #a87878, #001830, #c06060, #001830
+rofi.color-normal:	#001830, #a87878, #001830, #a87878, #001830
+rofi.color-urgent:	#001830, #a87878, #001830, #ffffff, #001830
+rofi.color-window:	#001830, #a87878
+
