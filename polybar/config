@@ -11,20 +11,33 @@
 background = ${xrdb:color0}
 foreground = ${xrdb:color7}
 
+color1 = ${xrdb:color1}
+color2 = ${xrdb:color2}
+color3 = ${xrdb:color3}
+color4 = ${xrdb:color4}
+color5 = ${xrdb:color5}
+color6 = ${xrdb:color6}
+
 alt-text-colour = ${xrdb:color6}
 
 [bar/top]
-monitor = VGA-1
+monitor = eDP-1
 bottom = false
 
-width = 100%
-height = 25
+width = 99%
+height = 30
+
+override-redirect = true
+wm-restack = i3
+
+offset-x = 0.5%
+offset-y = 0.5%
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-; How rounded the bar edges are
-radius = 0.0
+border-size = 1
+border-color = ${colors.foreground}
 
 line-size = 1
 underline-size= 1
@@ -36,20 +49,26 @@ modules-left = i3
 modules-center = xwindow
 modules-right = date
 
-font-0 = Terminus:size=10;1
+font-0 = xos4 Terminus:size=10;1
 font-1 = FontAwesome:size=10;1
 
 [bar/bottom]
-monitor = VGA-1
+monitor = eDP-1
 bottom = true
 
-width = 100%
-height = 25
+width = 99%
+height = 30
 
+override-redirect = true
+wm-restack = i3
+
+offset-x = 0.5%
+offset-y = 0.5%
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-radius = 0.0
+border-size = 1
+border-color = ${colors.foreground}
 
 line-size = 1
 overline-size = 1
@@ -57,11 +76,11 @@ overline-size = 1
 padding = 2
 module-margin = 1
 
-modules-left = filesystem
-;modules-center = date
-modules-right = volume
+modules-left = filesystem cpu memory network
+modules-center = mpd
+modules-right = volume battery
 
-font-0 = Terminus:size=10;1
+font-0 = xos4 Terminus:size=10;1
 font-1 = FontAwesome:size=10;1
 
 [module/i3]
@@ -93,7 +112,6 @@ date = %d-%m-%Y%
 time = %H:%M
 
 format =  <label>
-format-foreground = ${colors.alt-text-colour}
 label = %date% %time%
 
 [module/xwindow]
@@ -104,11 +122,87 @@ label =  %title%
 [module/volume]
 type = internal/volume
 
+format-volume = <label-volume> <bar-volume>
+label-volume =  %percentage%%
+label-muted = x
+
+bar-volume-width = 10
+bar-volume-gradient = true
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+
 [module/filesystem]
 type = internal/fs
 
 mount-0 = /
 
 interval = 30
-
 fixed-values = true
+
+label-mounted =  %mountpoint%: %free% left
+
+[module/cpu]
+type = internal/cpu
+
+interval = 1
+
+label =  %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 3
+
+label =  %gb_used%/%gb_total%
+
+[module/network]
+type = internal/network
+interface = wlp2s0
+
+interval = 3
+
+label-connected =  %essid%
+label-disconnected =  disconnected
+
+[module/battery]
+type = internal/battery
+
+battery = BAT0
+adapter = ADP0
+
+format-charging =  <ramp-capacity> <label-charging>
+format-charging-background = ${colors.color1}
+format-charging-padding = 2
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${colors.color1}
+format-discharging-foreground = ${colors.background}
+format-discharging-padding = 2
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+label-charging = %percentage%%
+label-discharging = %percentage%%
+label-full =  %percentage%%
+
+[module/mpd]
+type = internal/mpd
+
+host = ::
+port = 6600
+
+format-online =  <label-song> <label-time>  <icon-prev> <icon-play> <icon-pause> <icon-stop> <icon-next>
+format-offline =  No music playing
+
+icon-play = 
+icon-pause = 
+icon-stop = 
+icon-prev = 
+icon-next = 
