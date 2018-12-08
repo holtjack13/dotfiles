@@ -1,17 +1,29 @@
 " Installs Vim Plugins using Vim-Plug
 call plug#begin('~/.vim/plugged')
 
+" General Functionality Plugins
 Plug 'bling/vim-airline'
-Plug 'dylanaraps/wal.vim'
 Plug 'valloric/youcompleteme'
-Plug 'sheerun/vim-polyglot'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
 Plug 'scrooloose/nerdtree'
-Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine'
+
+" Languages:
+Plug 'sheerun/vim-polyglot'
+
+"   Latex
+Plug 'junegunn/goyo.vim'
+
+" Colorschemes and Themes
+Plug 'dylanaraps/wal.vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
+
+" Stop vim showing mode
+set noshowmode
 
 " Turns relative line numbers on
 set number
@@ -22,7 +34,7 @@ syntax on
 
 " Colour scheme settings
 colorscheme gruvbox
-set background=light
+set background=dark
 
 "Airline settings
 let g:airline_powerline_fonts = 1
